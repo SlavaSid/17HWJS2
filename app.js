@@ -7,10 +7,12 @@ const form = document.querySelector('form'),
 
 form.addEventListener('submit',  async (event) => {
     event.preventDefault();
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyB5nX8yZf5VQi0g7V7FWwpJ6YSrOTK8b10&q=${input.value}&type=video`;
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCADcGswi5ec79r45JV-65T52G42bEY25w&q=${input.value}&type=video`;
     input.value = '';
-    const response = await fetch(url); 
+    const response = await fetch(url);
     const info = await response.json();
+
+    
     const addVideo = info.items[0].id.videoId;
 
     player.textContent = ''
@@ -40,9 +42,3 @@ form.addEventListener('submit',  async (event) => {
     
 
 
-// try{
-//     newFunc();
-
-// } catch(error) {
-// console.error(error.message);
-// }
