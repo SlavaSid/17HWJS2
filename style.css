@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    margin: 5px;
+}
+.topInput {
+    background-color:rgb(54, 50, 25);
+    
+}
+form {
+    padding: 23px;  
+}
+
+input {
+padding: 4px;
+outline-color: #b03712;
+font-weight: bold;
+    }
+    
+button {
+    background-color:  rgb(245, 199, 13);
+    padding: 6px;
+    border: none;
+    font-weight: bold;
+}
+
+.player{
+    background-color:  rgb(245, 199, 13);
+    height: 60vh;
+    
+}
+.devht {
+    padding: 20px 0 50px 20px;
+}
+.inputImg {
+    height: 25vh;
+    gap: 10px;
+    padding: 20px 0 34px 20px;
+    background: linear-gradient(        
+        rgba(162, 147, 63, 0.63) 8.91%,
+        rgba(53, 51, 27, 0.473) 47.31%,
+        #8a8816);
+}
+
+img {
+    padding-right: 10px;
+    cursor: pointer;
+    transition:  .4s;
+  }
+
+img:hover{
+    transform: scale(.95);
+}
