@@ -9,12 +9,10 @@ form.addEventListener('submit',  async (event) => {
     event.preventDefault();
     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyB5nX8yZf5VQi0g7V7FWwpJ6YSrOTK8b10&q=${input.value}&type=video`;
     input.value = '';
-    console.log(input.value);
     const response = await fetch(url); 
     const info = await response.json();
     const addVideo = info.items[0].id.videoId;
 
-    console.log(addVideo);
     player.textContent = ''
     player.innerHTML = `
     <iframe class="devht" width="560" height="315" src="https://www.youtube.com/embed/${addVideo}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
@@ -27,11 +25,10 @@ form.addEventListener('submit',  async (event) => {
     `
     })
     inputImg.addEventListener('click', (event) => {
-        const activeImage = event.target;
-         if(activeImage.matches('img')){
-            const activeSrc = activeImage.getAttribute('class');
-           console.log(activeSrc);
-           player.innerHTML = `
+        
+         if(event.target.matches('img')){
+            const activeSrc = event.target.getAttribute('class');
+            player.innerHTML = `
     <iframe class="devht" width="560" height="315" src="https://www.youtube.com/embed/${activeSrc}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     `      
     }})})
