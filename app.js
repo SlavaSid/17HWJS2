@@ -21,10 +21,10 @@ const addVideo = (info) => {
 
 
 form.addEventListener('submit',  async (event) => {
-    event.preventDefault();
+    try {event.preventDefault();
     const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyCADcGswi5ec79r45JV-65T52G42bEY25w&q=${input.value}&type=video`;
     input.value = '';
-    const response = await fetch(url);
+   const response = await fetch(url);
     if(!response.ok){
         throw new Error('ошибка статус-кода')
     };
@@ -32,7 +32,10 @@ form.addEventListener('submit',  async (event) => {
     
 
     addVideo(info.items[0].id.videoId);
-    addImg(info.items);
+    addImg(info.items);}
+    catch (error){
+        console.error(error)
+        }
     
      });
 
